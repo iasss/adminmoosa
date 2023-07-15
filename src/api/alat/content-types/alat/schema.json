@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "alats",
+  "info": {
+    "singularName": "alat",
+    "pluralName": "alats",
+    "displayName": "alat",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "password": {
+      "type": "password"
+    },
+    "nama_sapi": {
+      "type": "string"
+    },
+    "id_pemilik": {
+      "type": "integer"
+    },
+    "id_alat": {
+      "type": "biginteger"
+    },
+    "moosauser": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::moosauser.moosauser",
+      "inversedBy": "alats"
+    },
+    "monitors": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::monitor.monitor",
+      "mappedBy": "alat"
+    }
+  }
+}
