@@ -1,0 +1,54 @@
+{
+  "kind": "collectionType",
+  "collectionName": "moosausers",
+  "info": {
+    "singularName": "moosauser",
+    "pluralName": "moosausers",
+    "displayName": "moosauser",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nama_user": {
+      "type": "text"
+    },
+    "email": {
+      "type": "email"
+    },
+    "foto": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "telp": {
+      "type": "biginteger"
+    },
+    "password": {
+      "type": "password"
+    },
+    "id_user": {
+      "type": "biginteger"
+    },
+    "alats": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::alat.alat",
+      "mappedBy": "moosauser"
+    },
+    "monitors": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::monitor.monitor",
+      "mappedBy": "moosauser"
+    }
+  }
+}
